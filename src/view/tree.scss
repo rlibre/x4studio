@@ -1,0 +1,134 @@
+
+.treepanel {
+	--tree-accent: var( --accent-background, #126e9e );
+	--tree-row-hover: color-mix( in srgb, var( --tree-accent ) 22%, transparent );
+	--tree-row-selected: var( --tree-accent );
+	--tree-row-selected-color: var( --accent-color, white );
+	--tree-dim: var( --text-ternary, #607784 );
+
+	// the marker is placed from its top-left corner
+	position: relative;
+
+	padding: 4px 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	user-select: none;
+	touch-action: none;
+
+	> .tree-row {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		height: 26px;
+		padding-right: 6px;
+		white-space: nowrap;
+		cursor: default;
+
+		&:hover {
+			background: var( --tree-row-hover );
+		}
+
+		&.selected {
+			background: var( --tree-row-selected );
+			color: var( --tree-row-selected-color );
+		}
+
+		// hidden, or inside something hidden
+		&.dim > .name,
+		&.dim > .type {
+			opacity: 0.45;
+		}
+
+		.x4icon {
+			width: 14px;
+			height: 14px;
+		}
+
+		// the arrow of a group: turned downwards when its members are shown
+		> .twisty {
+			display: grid;
+			place-items: center;
+			flex: none;
+			width: 14px;
+			height: 14px;
+
+			&.group {
+				cursor: pointer;
+				opacity: 0.7;
+			}
+
+			&.open {
+				transform: rotate( 90deg );
+			}
+		}
+
+		> .type {
+			flex: none;
+			width: 14px;
+			height: 14px;
+			opacity: 0.8;
+		}
+
+		> .name {
+			flex: 1 1 0;
+			min-width: 0;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			> input {
+				width: 100%;
+				min-width: 0;
+				height: 20px;
+				margin: 0;
+				padding: 0 4px;
+				user-select: text;
+			}
+		}
+
+		// The lock and the eye: there when the pointer is on the row, and
+		// always when they are on.
+		> .gadget {
+			display: grid;
+			place-items: center;
+			flex: none;
+			width: 20px;
+			height: 20px;
+			border-radius: 3px;
+			cursor: pointer;
+			opacity: 0;
+
+			&.on {
+				opacity: 0.9;
+			}
+
+			&:hover {
+				background: rgba( 127, 127, 127, 0.35 );
+			}
+		}
+
+		&:hover > .gadget:not( .on ) {
+			opacity: 0.55;
+		}
+	}
+
+	> .tree-empty {
+		padding: 6px 10px;
+		color: var( --tree-dim );
+	}
+
+	// Where the rows that are dragged would go: a line between two rows, or
+	// a frame on the group that receives them.
+	> .tree-marker {
+		position: absolute;
+		right: 0;
+		box-sizing: border-box;
+		pointer-events: none;
+		border-top: 2px solid var( --tree-accent );
+
+		&.into {
+			border: 2px solid var( --tree-accent );
+			border-radius: 3px;
+		}
+	}
+}

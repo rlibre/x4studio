@@ -1,0 +1,6 @@
+node_modules
+bin
+test/browser/shots
+test/browser/*.png
+.claude/
+test/

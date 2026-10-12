@@ -1,0 +1,150 @@
+/**
+ * Dark, bluish theme of the studio, with the colors of the x4js
+ * documentation (x4js.org/doc, dark mode). It is the one of the designer,
+ * copied: the two editors do not import each other.
+ *
+ *   #002a40  background        #126e9e  accent
+ *   #032f46  panels            #8ad0f5  accent, light
+ *   #06354e  raised            #f0f9fd  text
+ *   #174b64  lines             #9ec3d4 / #6f9bb1  dimmed texts
+ *
+ * As the documentation says (Themes and CSS): the primary scale first, then
+ * the variables of meaning, then the few components that have a color of
+ * their own.
+ *
+ * The variables are declared on ":root:root", not on ":root" as x4 does:
+ * it selects the same element, and counts more, so the theme wins whatever
+ * the order of the stylesheets. And the pages that are edited, which are
+ * made of x4 components too, can then be given the theme of x4 instead of
+ * this one: what x4 declares is told from what the studio declares (see
+ * view/pagetheme.ts).
+ */
+
+// 1. the primary scale, from the palest to the darkest blue.
+//    a30, a55 and a70 are not in the documentation: they are in between.
+:root:root {
+	--color-primary-a0:   #f0f9fd;
+	--color-primary-a5:   #e7f5fc;
+	--color-primary-a10:  #d8edf7;
+	--color-primary-a20:  #8ad0f5;
+	--color-primary-a30:  #5fb2dc;
+	--color-primary-a40:  #3d8fbd;
+	--color-primary-a50:  #126e9e;
+	--color-primary-a55:  #106490;
+	--color-primary-a60:  #0e5a80;
+	--color-primary-a70:  #0a4664;
+	--color-primary-a80:  #06354e;
+	--color-primary-a90:  #032f46;
+	--color-primary-a100: #002a40;
+}
+
+// 2. what the colors mean
+:root:root {
+	--background-primary:   #032f46;
+	--background-secondary: #06354e;
+	--background-ternary:   #002a40;
+
+	--text-primary:   #f0f9fd;
+	--text-secondary: #6f9bb1;
+	--text-ternary:   #9ec3d4;
+
+	--disabled-background: #174b64;
+	--disabled-color:      #6f9bb1;
+	--disabled-color-dark: #35647a;
+
+	--accent-background:        #126e9e;
+	--accent-background-hover:  #1880b5;
+	--accent-background-focus:  #1880b5;
+	--accent-background-active: #0e5a80;
+
+	--accent-color:        #f0f9fd;
+	--accent-color-hover:  #f0f9fd;
+	--accent-color-focus:  #f0f9fd;
+	--accent-color-active: #f0f9fd;
+
+	--border:       #174b64;
+	--border-light: #0c3d55;
+	--border-hover: #35647a;
+	--border-focus: #126e9e;
+}
+
+// 3. components whose default is a plain light color
+:root:root {
+	--menu-background: #032f46;
+
+	--ol-button-background-hover:  #0a4664;
+	--ol-button-background-active: #174b64;
+	--ol-button-color-disabled:    #35647a;
+
+	// x4 gives the accent to the icon of a focused button: on a dark
+	// background, it is the light accent that can be read
+	--ol-button-color-focus:  #8ad0f5;
+	--ol-button-border-focus: #8ad0f5;
+
+	--label-icon-color: #9ec3d4;
+
+	// a tag is drawn on the accent: its text is the one of the accent
+	--tag-color:  #f0f9fd;
+	--tag-border: transparent;
+
+	// A notification: clearly lighter than the panels it comes over, with
+	// a line around it, so that it is seen at once.
+	--notification-background: #174b64;
+	--notification-border:     #35647a;
+	--notification-text-color: #d8edf7;
+
+	--listbox-background:            #002a40;
+	--listbox-item-background-hover: #0a4664;
+
+	--propertygrid-background:       #032f46;
+	--propertygrid-odd-background:   #06354e;
+	--propertygrid-even-background:  transparent;
+	--propertygrid-hover-background: #0a4664;
+	--propertygrid-focus-background: #0e5a80;
+	--propertygrid-input-background: #d8edf7;	// pale: the text of a field is dark
+	--propertygrid-group-background: #06354e;
+	--propertygrid-group-color:      #8ad0f5;
+}
+
+// The titles of tabs. x4 writes them in greys, and in black under the
+// pointer, which are made for a light background: here they are the dimmed
+// text, and the plain one for the tab in front or under the pointer. The
+// line under them is the light accent, which can be read on a dark one.
+:root:root {
+	--tab-border-selected: #8ad0f5;
+	--tab-border-hover:    #3d8fbd;
+}
+
+:root .x4tabs .x4ctablist .x4button {
+	color: var( --text-ternary );
+
+	&.selected,
+	&:hover {
+		color: var( --text-primary );
+	}
+}
+
+// The arrows of a number field are drawn by the browser, on white, which
+// no property changes. They are drawn here instead, on nothing: the field
+// shows through. The browser still shows them only under the pointer or
+// with the focus.
+// Pale: the fields of the studio are dark (the inspector), and dark arrows
+// could not be seen on them.
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	align-self: stretch;
+	width: 12px;
+	cursor: pointer;
+	background: url( "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 20'%3E%3Cpath d='M2.5 8l3.5-4.500 3.500 4.500zM2.500 12l3.500 4.500 3.500-4.500z' fill='%23d8edf7' fill-opacity='0.85'/%3E%3C/svg%3E" ) no-repeat center / 12px 20px;
+}
+
+// The surface: dark around the page, and neutral. Not the blue of the
+// studio: what is around a page is neither a panel nor part of the page.
+.boxsurface {
+	--studio-back: #24272b;
+}
+
+body {
+	background: var( --background-primary );
+	color: var( --text-primary );
+}

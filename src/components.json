@@ -1,0 +1,729 @@
+{
+	"format": "x4studio/components",
+	"version": 1,
+	"look": [
+		{ "name": "padding", "title": "Padding", "type": "sides", "min": 0, "css": "padding", "group": "Layout" },
+		{ "name": "margin", "title": "Margin", "type": "sides", "css": "margin", "group": "Layout" },
+		{ "name": "gap", "title": "Gap", "type": "number", "min": 0, "css": "gap", "group": "Layout" },
+		{
+			"name": "alignItems", "title": "Align", "type": "options", "css": "align-items", "group": "Layout",
+			"options": [
+				{ "value": "start", "title": "Start", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 4h16'/><rect x='7' y='8' width='4' height='10' rx='1'/><rect x='13' y='8' width='4' height='6' rx='1'/></svg>" },
+				{ "value": "center", "title": "Center", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h4M11 12h2M17 12h4'/><rect x='7' y='6' width='4' height='12' rx='1'/><rect x='13' y='8' width='4' height='8' rx='1'/></svg>" },
+				{ "value": "end", "title": "End", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 20h16'/><rect x='7' y='6' width='4' height='10' rx='1'/><rect x='13' y='10' width='4' height='6' rx='1'/></svg>" },
+				{ "value": "stretch", "title": "Stretch", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 4h16M4 20h16'/><rect x='7' y='8' width='4' height='8' rx='1'/><rect x='13' y='8' width='4' height='8' rx='1'/></svg>" }
+			]
+		},
+		{
+			"name": "justifyContent", "title": "Justify", "type": "options", "css": "justify-content", "group": "Layout",
+			"options": [
+				{ "value": "start", "title": "Start", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 4v16'/><rect x='8' y='7' width='4' height='10' rx='1'/><rect x='14' y='7' width='4' height='10' rx='1'/></svg>" },
+				{ "value": "center", "title": "Center", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 4v16'/><rect x='5' y='7' width='4' height='10' rx='1'/><rect x='15' y='7' width='4' height='10' rx='1'/></svg>" },
+				{ "value": "end", "title": "End", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 4v16'/><rect x='6' y='7' width='4' height='10' rx='1'/><rect x='12' y='7' width='4' height='10' rx='1'/></svg>" },
+				{ "value": "space-between", "title": "Space between", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 4v16M20 4v16'/><rect x='7' y='7' width='3' height='10' rx='1'/><rect x='14' y='7' width='3' height='10' rx='1'/></svg>" }
+			]
+		},
+
+		{ "name": "fontFamily", "title": "Font Family", "type": "string", "css": "font-family", "group": "Text Style" },
+		{
+			"name": "fontWeight", "title": "Font Weight", "type": "options", "css": "font-weight", "group": "Text Style",
+			"options": [
+				{ "value": "300", "title": "Light" },
+				{ "value": "400", "title": "Regular" },
+				{ "value": "500", "title": "Medium" },
+				{ "value": "600", "title": "Semi-bold" },
+				{ "value": "700", "title": "Bold" }
+			]
+		},
+		{ "name": "fontSize", "title": "Font Size", "type": "number", "min": 1, "css": "font-size", "group": "Text Style", "half": true },
+		{ "name": "lineHeight", "title": "Line Height", "type": "number", "min": 0, "step": 0.050, "css": "line-height", "unit": "", "group": "Text Style", "half": true },
+		{ "name": "letterSpacing", "title": "Letter Spacing", "type": "number", "step": 0.500, "css": "letter-spacing", "group": "Text Style" },
+		{
+			"name": "textTransform", "title": "Text Transform", "type": "options", "css": "text-transform", "group": "Text Style",
+			"options": [
+				{ "value": "uppercase", "title": "AA" },
+				{ "value": "lowercase", "title": "aa" },
+				{ "value": "capitalize", "title": "Aa" }
+			]
+		},
+		{
+			"name": "textDecoration", "title": "Text Decoration", "type": "options", "css": "text-decoration", "group": "Text Style",
+			"options": [
+				{ "value": "underline", "title": "Underline", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M7 5v6a5 5 0 0 0 10 0V5M5 20h14'/></svg>" },
+				{ "value": "line-through", "title": "Strike through", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M16 7.500c-.500-1.500-2-2.500-4-2.500-2.500 0-4 1.300-4 3 0 1.200.800 2 2 2.500M8 16.500c.500 1.500 2 2.500 4 2.500 2.500 0 4-1.300 4-3 0-.700-.300-1.300-.800-1.800M4 12h16'/></svg>" }
+			]
+		},
+		{
+			"name": "textAlign", "title": "Align", "type": "options", "css": "text-align", "group": "Text Style",
+			"options": [
+				{ "value": "left", "title": "Left", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M4 10h10M4 14h16M4 18h10'/></svg>" },
+				{ "value": "center", "title": "Center", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M7 10h10M4 14h16M7 18h10'/></svg>" },
+				{ "value": "right", "title": "Right", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M10 10h10M4 14h16M10 18h10'/></svg>" },
+				{ "value": "justify", "title": "Justify", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M4 10h16M4 14h16M4 18h16'/></svg>" }
+			]
+		},
+		{
+			"name": "whiteSpace", "title": "White Space", "type": "options", "css": "white-space", "group": "Text Style",
+			"options": [
+				{ "value": "normal", "title": "normal" },
+				{ "value": "nowrap", "title": "nowrap" },
+				{ "value": "pre", "title": "pre" },
+				{ "value": "pre-wrap", "title": "pre-wrap" },
+				{ "value": "pre-line", "title": "pre-line" }
+			]
+		},
+		{ "name": "color", "title": "Text Color", "type": "color", "css": "color", "group": "Text Style" },
+
+		{ "name": "minWidth", "title": "Min W", "type": "number", "min": 0, "css": "min-width", "group": "Size", "half": true },
+		{ "name": "minHeight", "title": "Min H", "type": "number", "min": 0, "css": "min-height", "group": "Size", "half": true },
+		{ "name": "maxWidth", "title": "Max W", "type": "number", "min": 0, "css": "max-width", "group": "Size", "half": true },
+		{ "name": "maxHeight", "title": "Max H", "type": "number", "min": 0, "css": "max-height", "group": "Size", "half": true },
+		{
+			"name": "overflow", "title": "Overflow", "type": "options", "css": "overflow", "group": "Size",
+			"options": [
+				{ "value": "visible", "title": "visible" },
+				{ "value": "hidden", "title": "hidden" },
+				{ "value": "auto", "title": "auto" },
+				{ "value": "scroll", "title": "scroll" },
+				{ "value": "clip", "title": "clip" }
+			]
+		},
+
+		{ "name": "background", "title": "Color", "type": "color", "css": "background-color", "group": "Background" },
+
+		{ "name": "borderWidth", "title": "Width", "type": "number", "min": 0, "css": "border-width", "group": "Border", "half": true },
+		{ "name": "radius", "title": "Radius", "type": "number", "min": 0, "css": "border-radius", "group": "Border", "half": true },
+		{
+			"name": "borderStyle", "title": "Line", "type": "options", "css": "border-style", "group": "Border",
+			"options": [
+				{ "value": "solid", "title": "Solid" },
+				{ "value": "dashed", "title": "Dashed" },
+				{ "value": "dotted", "title": "Dotted" }
+			]
+		},
+		{ "name": "borderColor", "title": "Color", "type": "color", "css": "border-color", "group": "Border" }
+	],
+	"theme": [
+		{ "name": "--color-primary-a0", "title": "Primary 0", "group": "Primary scale", "fixed": "#ffffff" },
+		{ "name": "--color-primary-a5", "title": "Primary 5", "group": "Primary scale", "shade": 35 },
+		{ "name": "--color-primary-a10", "title": "Primary 10", "group": "Primary scale", "shade": 33.6 },
+		{ "name": "--color-primary-a20", "title": "Primary 20", "group": "Primary scale", "shade": 25.2 },
+		{ "name": "--color-primary-a30", "title": "Primary 30", "group": "Primary scale", "shade": 16.8 },
+		{ "name": "--color-primary-a40", "title": "Primary 40", "group": "Primary scale", "shade": 8.4 },
+		{ "name": "--color-primary-a50", "title": "Primary 50", "group": "Primary scale", "shade": 0 },
+		{ "name": "--color-primary-a55", "title": "Primary 55", "group": "Primary scale", "shade": -5 },
+		{ "name": "--color-primary-a60", "title": "Primary 60", "group": "Primary scale", "shade": -8.4 },
+		{ "name": "--color-primary-a70", "title": "Primary 70", "group": "Primary scale", "shade": -16.8 },
+		{ "name": "--color-primary-a80", "title": "Primary 80", "group": "Primary scale", "shade": -25.2 },
+		{ "name": "--color-primary-a90", "title": "Primary 90", "group": "Primary scale", "shade": -33.6 },
+		{ "name": "--color-primary-a100", "title": "Primary 100", "group": "Primary scale", "fixed": "#000000" },
+
+		{ "name": "--background-primary", "title": "Primary", "group": "Backgrounds" },
+		{ "name": "--background-secondary", "title": "Secondary", "group": "Backgrounds" },
+		{ "name": "--background-ternary", "title": "Ternary", "group": "Backgrounds" },
+
+		{ "name": "--text-primary", "title": "Primary", "group": "Texts" },
+		{ "name": "--text-secondary", "title": "Secondary", "group": "Texts" },
+		{ "name": "--text-ternary", "title": "Ternary", "group": "Texts" },
+
+		{ "name": "--accent-background", "title": "Background", "group": "Accent" },
+		{ "name": "--accent-background-hover", "title": "Background, hover", "group": "Accent" },
+		{ "name": "--accent-background-focus", "title": "Background, focus", "group": "Accent" },
+		{ "name": "--accent-background-active", "title": "Background, active", "group": "Accent" },
+		{ "name": "--accent-color", "title": "Text", "group": "Accent" },
+		{ "name": "--accent-color-hover", "title": "Text, hover", "group": "Accent" },
+		{ "name": "--accent-color-focus", "title": "Text, focus", "group": "Accent" },
+		{ "name": "--accent-color-active", "title": "Text, active", "group": "Accent" },
+
+		{ "name": "--border", "title": "Border", "group": "Borders" },
+		{ "name": "--border-light", "title": "Light", "group": "Borders" },
+		{ "name": "--border-hover", "title": "Hover", "group": "Borders" },
+		{ "name": "--border-focus", "title": "Focus", "group": "Borders" },
+
+		{ "name": "--disabled-background", "title": "Background", "group": "Disabled" },
+		{ "name": "--disabled-color", "title": "Text", "group": "Disabled" },
+		{ "name": "--disabled-color-dark", "title": "Text, dark", "group": "Disabled" },
+
+		{ "name": "--alert-background", "title": "Alert", "group": "Alert, warning, success" },
+		{ "name": "--alert-background-active", "title": "Alert, active", "group": "Alert, warning, success" },
+		{ "name": "--alert-color", "title": "Alert, text", "group": "Alert, warning, success" },
+		{ "name": "--warning-background", "title": "Warning", "group": "Alert, warning, success" },
+		{ "name": "--warning-color", "title": "Warning, text", "group": "Alert, warning, success" },
+		{ "name": "--success-background", "title": "Success", "group": "Alert, warning, success" },
+		{ "name": "--success-background-active", "title": "Success, active", "group": "Alert, warning, success" },
+		{ "name": "--success-color", "title": "Success, text", "group": "Alert, warning, success" }
+	],
+	"components": [
+		{
+			"type": "root",
+			"title": "Page",
+			"description": "The page itself: a vertical box, which the generated class derives from. It takes the room it is given (fit), or has a size of its own.",
+			"class": "VBox",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='16' height='18' rx='1'/><path d='M4 8h16'/></svg>",
+			"container": true,
+			"properties": [
+				{ "name": "fit", "title": "Fit", "type": "boolean", "default": true, "cls": "x4fit" }
+			]
+		},
+		{
+			"type": "vbox",
+			"title": "VBox",
+			"description": "A vertical box: its children are one under the other, and take its width.",
+			"class": "VBox",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='16' height='4' rx='1'/><rect x='4' y='10' width='16' height='4' rx='1'/><rect x='4' y='17' width='16' height='4' rx='1'/></svg>",
+			"container": true
+		},
+		{
+			"type": "hbox",
+			"title": "HBox",
+			"description": "A horizontal box: its children are side by side, centered on its height.",
+			"class": "HBox",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='4' height='16' rx='1'/><rect x='10' y='4' width='4' height='16' rx='1'/><rect x='17' y='4' width='4' height='16' rx='1'/></svg>",
+			"container": true
+		},
+		{
+			"type": "label",
+			"title": "Label",
+			"description": "A line of text.",
+			"class": "Label",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M5 8V5h14v3M12 5v14M9 19h6'/></svg>",
+			"properties": [
+				{ "name": "text", "title": "Text", "type": "string", "initial": "Label" },
+				{ "name": "icon", "title": "Icon", "type": "icon" },
+				{
+					"name": "align", "title": "Align", "type": "options", "default": "left",
+					"options": [
+						{ "value": "left", "title": "Left", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M4 10h10M4 14h16M4 18h10'/></svg>" },
+						{ "value": "center", "title": "Center", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M7 10h10M4 14h16M7 18h10'/></svg>" },
+						{ "value": "right", "title": "Right", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M10 10h10M4 14h16M10 18h10'/></svg>" }
+					]
+				}
+			]
+		},
+		{
+			"type": "button",
+			"title": "Button",
+			"description": "A button the user clicks.",
+			"class": "Button",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='7' width='18' height='10' rx='3'/><path d='M8 12h8'/></svg>",
+			"properties": [
+				{ "name": "label", "title": "Label", "type": "string", "initial": "Button" },
+				{ "name": "icon", "title": "Icon", "type": "icon" }
+			]
+		},
+		{
+			"type": "btngroup",
+			"title": "BtnGroup",
+			"description": "A row of buttons: the usual ones, by their name, and buttons, labels or inputs of its own, in the order they are given.",
+			"class": "BtnGroup",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='8' width='9' height='8' rx='2'/><rect x='13' y='8' width='9' height='8' rx='2'/></svg>",
+			"container": true,
+			"content": "items",
+			"parts": ":scope > *",
+			"items": [
+				{
+					"type": "btnitem",
+					"title": "Standard button",
+					"description": "A usual button, known by its name; or what pushes the buttons that follow to the end, or a space between two of them.",
+					"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='7' width='16' height='10' rx='3'/><path d='M9 12.500l2 2 4-4.500'/></svg>",
+					"item": "value",
+					"join": ".",
+					"properties": [
+						{
+							"name": "name", "title": "Button", "type": "options", "initial": "ok",
+							"options": [
+								{ "value": "ok", "title": "OK" },
+								{ "value": "cancel", "title": "Cancel" },
+								{ "value": "yes", "title": "Yes" },
+								{ "value": "no", "title": "No" },
+								{ "value": "retry", "title": "Retry" },
+								{ "value": "abort", "title": "Abort" },
+								{ "value": "save", "title": "Save" },
+								{ "value": "-", "title": "(push what follows to the end)" },
+								{ "value": "~", "title": "(a space)" }
+							]
+						},
+						{ "name": "outline", "title": "Outline", "type": "boolean", "default": false },
+						{ "name": "default", "title": "Default", "type": "boolean", "default": false },
+						{ "name": "disabled", "title": "Disabled", "type": "boolean", "default": false }
+					]
+				}
+			],
+			"accepts": ["button", "label", "input"],
+			"properties": [
+				{
+					"name": "align", "title": "Align", "type": "options", "default": "left",
+					"options": [
+						{ "value": "left", "title": "Left", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M4 10h10M4 14h16M4 18h10'/></svg>" },
+						{ "value": "center", "title": "Center", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M7 10h10M4 14h16M7 18h10'/></svg>" },
+						{ "value": "right", "title": "Right", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M10 10h10M4 14h16M10 18h10'/></svg>" }
+					]
+				},
+				{ "name": "vertical", "title": "Vertical", "type": "boolean", "default": false }
+			]
+		},
+		{
+			"type": "listbox",
+			"title": "Listbox",
+			"description": "A list of items, one of which is selected.",
+			"class": "Listbox",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='1'/><path d='M7 8h10M7 12h10M7 16h10'/></svg>",
+			"container": true,
+			"content": "items",
+			"parts": ".x4item",
+			"items": [
+				{
+					"type": "listitem",
+					"title": "List item",
+					"description": "An item of the list: the text that is shown, and the id the code knows it by.",
+					"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 12h11M4 12h1'/></svg>",
+					"item": "object",
+					"properties": [
+						{ "name": "id", "title": "Id", "type": "string", "initial": "item" },
+						{ "name": "text", "title": "Text", "type": "string", "initial": "Item" },
+						{ "name": "icon", "title": "Icon", "type": "icon", "prop": "iconId" }
+					]
+				}
+			],
+			"initial": { "height": 120 },
+			"properties": [
+				{ "name": "title", "title": "Title", "type": "string", "default": "" },
+				{ "name": "icon", "title": "Icon", "type": "icon" }
+			]
+		},
+		{
+			"type": "input",
+			"title": "Input",
+			"description": "A field the user types a text in.",
+			"class": "Input",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='6' width='18' height='12' rx='1'/><path d='M7 10v4'/></svg>",
+			"fixed": { "type": "text" },
+			"properties": [
+				{ "name": "value", "title": "Value", "type": "string", "default": "" },
+				{ "name": "placeholder", "title": "Placeholder", "type": "string", "default": "" },
+				{ "name": "name", "title": "Field name", "type": "string", "default": "" }
+			]
+		},
+		{
+			"type": "textedit",
+			"title": "TextEdit",
+			"description": "A field with its label: a text, a number, a date or a time.",
+			"class": "TextEdit",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h5'/><rect x='10' y='7' width='11' height='10' rx='1'/></svg>",
+			"properties": [
+				{ "name": "label", "title": "Label", "type": "string", "initial": "Label" },
+				{ "name": "labelWidth", "title": "Label width", "type": "number", "min": 0, "optional": true },
+				{ "name": "inputWidth", "title": "Input width", "type": "number", "min": 0, "optional": true },
+				{
+					"name": "type", "title": "Type", "type": "options", "default": "text",
+					"options": [
+						{ "value": "text", "title": "Text" },
+						{ "value": "email", "title": "Email" },
+						{ "value": "password", "title": "Password" },
+						{ "value": "number", "title": "Number" },
+						{ "value": "date", "title": "Date" },
+						{ "value": "time", "title": "Time" }
+					]
+				},
+				{ "name": "value", "title": "Value", "type": "string", "default": "" },
+				{ "name": "placeholder", "title": "Placeholder", "type": "string", "default": "" },
+				{ "name": "required", "title": "Required", "type": "boolean", "default": false },
+				{ "name": "readonly", "title": "Read only", "type": "boolean", "default": false },
+				{ "name": "name", "title": "Field name", "type": "string", "default": "" }
+			]
+		},
+		{
+			"type": "textarea",
+			"title": "TextArea",
+			"description": "A field for a text of several lines, under its label.",
+			"class": "TextArea",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='1'/><path d='M7 9h10M7 13h6'/></svg>",
+			"initial": { "height": 100 },
+			"properties": [
+				{ "name": "label", "title": "Label", "type": "string", "initial": "Label" },
+				{ "name": "value", "title": "Value", "type": "string", "default": "" },
+				{
+					"name": "resize", "title": "Resize", "type": "options",
+					"options": [
+						{ "value": "none", "title": "None" },
+						{ "value": "vertical", "title": "Vert." },
+						{ "value": "horizontal", "title": "Horz." },
+						{ "value": "both", "title": "Both" }
+					]
+				},
+				{ "name": "readonly", "title": "Read only", "type": "boolean", "default": false },
+				{ "name": "name", "title": "Field name", "type": "string", "default": "" }
+			]
+		},
+		{
+			"type": "checkbox",
+			"title": "Checkbox",
+			"description": "A box the user ticks, with its label.",
+			"class": "Checkbox",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M8 12l3 3 5-6'/></svg>",
+			"properties": [
+				{ "name": "label", "title": "Label", "type": "string", "initial": "Checkbox" },
+				{ "name": "checked", "title": "Checked", "type": "boolean", "default": false },
+				{ "name": "name", "title": "Field name", "type": "string", "default": "" }
+			]
+		},
+		{
+			"type": "radio",
+			"title": "Radio",
+			"description": "One choice among those of its group: the radios that have the same group, of which one is checked.",
+			"class": "Radio",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></svg>",
+			"properties": [
+				{ "name": "label", "title": "Label", "type": "string", "initial": "Radio" },
+				{ "name": "icon", "title": "Icon", "type": "icon" },
+				{ "name": "name", "title": "Group", "type": "string", "initial": "group" },
+				{ "name": "value", "title": "Value", "type": "string", "initial": "1" },
+				{ "name": "checked", "title": "Checked", "type": "boolean", "default": false }
+			]
+		},
+		{
+			"type": "switch",
+			"title": "Switch",
+			"description": "A switch that is on or off, with its label.",
+			"class": "Switch",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='7' width='20' height='10' rx='5'/><circle cx='16' cy='12' r='2'/></svg>",
+			"properties": [
+				{ "name": "label", "title": "Label", "type": "string", "initial": "Switch" },
+				{ "name": "checked", "title": "Checked", "type": "boolean", "default": false }
+			]
+		},
+		{
+			"type": "select",
+			"title": "Select",
+			"description": "A list that drops down, drawn by the browser: one of its items is chosen.",
+			"class": "Select",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='7' width='18' height='10' rx='1'/><path d='M14 11l2 2 2-2'/></svg>",
+			"container": true,
+			"content": "items",
+			"items": [
+				{
+					"type": "selectitem",
+					"title": "Choice",
+					"description": "A choice of the list: the text that is shown, and the id the code knows it by.",
+					"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 12h11M4 12h1'/></svg>",
+					"item": "object",
+					"properties": [
+						{ "name": "id", "title": "Id", "type": "string", "initial": "item" },
+						{ "name": "text", "title": "Text", "type": "string", "initial": "Item" }
+					]
+				}
+			],
+			"properties": [
+				{ "name": "value", "title": "Value", "type": "string" },
+				{ "name": "multiple", "title": "Multiple", "type": "boolean", "default": false },
+				{ "name": "required", "title": "Required", "type": "boolean", "default": false },
+				{ "name": "name", "title": "Field name", "type": "string", "default": "" }
+			]
+		},
+		{
+			"type": "combobox",
+			"title": "Combobox",
+			"description": "A field with its label and a list that drops down: one of its items is chosen, by typing its text when it is not read only.",
+			"class": "Combobox",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='7' width='18' height='10' rx='1'/><path d='M14 7v10M16 11l1.500 1.500 1.500-1.500M6 12h5'/></svg>",
+			"container": true,
+			"content": "items",
+			"items": [
+				{
+					"type": "comboitem",
+					"title": "Choice",
+					"description": "A choice of the list: the text that is shown, and the id the code knows it by.",
+					"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 12h11M4 12h1'/></svg>",
+					"item": "object",
+					"properties": [
+						{ "name": "id", "title": "Id", "type": "string", "initial": "item" },
+						{ "name": "text", "title": "Text", "type": "string", "initial": "Item" },
+						{ "name": "icon", "title": "Icon", "type": "icon", "prop": "iconId" }
+					]
+				}
+			],
+			"properties": [
+				{ "name": "label", "title": "Label", "type": "string", "initial": "Label" },
+				{ "name": "labelWidth", "title": "Label width", "type": "number", "min": 0, "optional": true },
+				{ "name": "value", "title": "Value", "type": "string" },
+				{ "name": "readonly", "title": "Read only", "type": "boolean", "default": true },
+				{ "name": "required", "title": "Required", "type": "boolean", "default": false },
+				{ "name": "name", "title": "Field name", "type": "string", "default": "" }
+			]
+		},
+		{
+			"type": "slider",
+			"title": "Slider",
+			"description": "A thumb the user drags along a track, to choose a number between two others.",
+			"class": "Slider",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h3M12 12h9'/><circle cx='9' cy='12' r='3'/></svg>",
+			"fixed": { "value": 0, "min": 0, "max": 100 },
+			"properties": [
+				{ "name": "value", "title": "Value", "type": "number", "default": 0, "initial": 50 },
+				{ "name": "min", "title": "Min", "type": "number", "default": 0 },
+				{ "name": "max", "title": "Max", "type": "number", "default": 100 },
+				{ "name": "step", "title": "Step", "type": "number", "min": 0, "default": 1 },
+				{ "name": "vertical", "title": "Vertical", "type": "boolean", "default": false }
+			]
+		},
+		{
+			"type": "colorinput",
+			"title": "ColorInput",
+			"description": "A field for a color: its swatch and its code.",
+			"class": "ColorInput",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='7' width='18' height='10' rx='1'/><rect x='6' y='10' width='4' height='4'/><path d='M13 12h5'/></svg>",
+			"properties": [
+				{ "name": "color", "title": "Color", "type": "color", "initial": "#126e9e" },
+				{
+					"name": "format", "title": "Format", "type": "options", "default": "rgb",
+					"options": [
+						{ "value": "rgb", "title": "rgb" },
+						{ "value": "hex", "title": "hex" }
+					]
+				},
+				{ "name": "picker", "title": "Picker", "type": "boolean", "default": false },
+				{ "name": "nullable", "title": "May be empty", "type": "boolean", "default": false },
+				{ "name": "name", "title": "Field name", "type": "string", "default": "" }
+			]
+		},
+		{
+			"type": "rating",
+			"title": "Rating",
+			"description": "A row of stars, the first ones of which are lit: a mark the user gives.",
+			"class": "Rating",
+			"fixed": { "steps": 5 },
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3l2.800 5.700 6.200.900-4.500 4.400 1.100 6.200-5.600-2.900-5.600 2.900 1.100-6.200L3 9.600l6.200-.900z'/></svg>",
+			"properties": [
+				{ "name": "steps", "title": "Steps", "type": "number", "min": 1, "default": 5 },
+				{ "name": "value", "title": "Value", "type": "number", "min": 0, "default": 0, "initial": 3 },
+				{ "name": "icon", "title": "Icon", "type": "icon" },
+				{ "name": "name", "title": "Field name", "type": "string", "default": "" }
+			]
+		},
+		{
+			"type": "form",
+			"title": "Form",
+			"description": "A box whose fields are read and written at once, by their field name. It takes the room it is given: in a box that has no height of its own, give it one.",
+			"class": "Form",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6h5M3 12h5M3 18h5'/><rect x='11' y='4' width='10' height='4' rx='1'/><rect x='11' y='10' width='10' height='4' rx='1'/><rect x='11' y='16' width='10' height='4' rx='1'/></svg>",
+			"container": true,
+			"properties": [
+				{ "name": "autoComplete", "title": "Auto complete", "type": "boolean" }
+			]
+		},
+		{
+			"type": "panel",
+			"title": "Panel",
+			"description": "A vertical box with a line around it and a title.",
+			"class": "Panel",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 6H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-3M12 6h2'/></svg>",
+			"container": true,
+			"properties": [
+				{ "name": "title", "title": "Title", "type": "string", "initial": "Panel" },
+				{ "name": "icon", "title": "Icon", "type": "icon" }
+			]
+		},
+		{
+			"type": "tabs",
+			"title": "Tabs",
+			"description": "Pages one behind the other, each with a title: a click on a title shows its page. A page holds one component, a box most of the time.",
+			"class": "Tabs",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 9h18v11H3zM3 9V5h6v4M9 9V5h6v4'/></svg>",
+			"container": true,
+			"content": "items",
+			"parts": ".x4ctablist > .x4button",
+			"reveal": { "method": "selectTab", "by": "name" },
+			"fixed": { "default": "" },
+			"initial": { "height": 200 },
+			"holds": [{ "type": "tabitem" }],
+			"items": [
+				{
+					"type": "tabitem",
+					"title": "Tab",
+					"description": "A page of the tabs: its title, the name the code knows it by, and the component it shows.",
+					"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 9V5h8v4M2 9h20'/></svg>",
+					"item": "object",
+					"container": true,
+					"content": "content",
+					"single": true,
+					"holds": [{ "type": "vbox" }],
+					"properties": [
+						{ "name": "name", "title": "Name", "type": "string", "initial": "tab" },
+						{ "name": "title", "title": "Title", "type": "string", "initial": "Tab" },
+						{ "name": "icon", "title": "Icon", "type": "icon" }
+					]
+				}
+			],
+			"properties": [
+				{ "name": "default", "title": "First shown", "type": "string", "default": "", "initial": "tab" },
+				{ "name": "vertical", "title": "Vertical", "type": "boolean", "default": false }
+			]
+		},
+		{
+			"type": "stackbox",
+			"title": "StackBox",
+			"description": "Pages one behind the other, without titles: the code chooses the one that is shown, by its name. A page holds one component.",
+			"class": "StackBox",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='8' width='14' height='12' rx='1'/><path d='M7 8V4h14v12h-4'/></svg>",
+			"container": true,
+			"content": "items",
+			"reveal": { "method": "select", "by": "name" },
+			"fixed": { "default": "" },
+			"initial": { "height": 200 },
+			"holds": [{ "type": "stackitem" }],
+			"items": [
+				{
+					"type": "stackitem",
+					"title": "Page",
+					"description": "A page of the stack: the name the code knows it by, and the component it shows.",
+					"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='5' width='14' height='14' rx='1'/></svg>",
+					"item": "object",
+					"container": true,
+					"content": "content",
+					"single": true,
+					"holds": [{ "type": "vbox" }],
+					"properties": [
+						{ "name": "name", "title": "Name", "type": "string", "initial": "page" }
+					]
+				}
+			],
+			"properties": [
+				{ "name": "default", "title": "First shown", "type": "string", "default": "", "initial": "page" }
+			]
+		},
+		{
+			"type": "hsplitbox",
+			"title": "HSplitBox",
+			"description": "A horizontal box with a sizer between its children: the user changes their width.",
+			"class": "HSplitBox",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='1'/><path d='M10 4v16M13 12h5M15 10l-2 2 2 2M16 10l2 2-2 2'/></svg>",
+			"container": true,
+			"content": "content"
+		},
+		{
+			"type": "vsplitbox",
+			"title": "VSplitBox",
+			"description": "A vertical box with a sizer between its children: the user changes their height.",
+			"class": "VSplitBox",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='16' height='18' rx='1'/><path d='M4 10h16M12 13v5M10 15l2-2 2 2M10 16l2 2 2-2'/></svg>",
+			"container": true,
+			"content": "content"
+		},
+		{
+			"type": "simpletext",
+			"title": "SimpleText",
+			"description": "A text, and nothing else: no icon, and it may take several lines.",
+			"class": "SimpleText",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 7h16M4 12h16M4 17h10'/></svg>",
+			"properties": [
+				{ "name": "text", "title": "Text", "type": "string", "initial": "Text" },
+				{
+					"name": "align", "title": "Align", "type": "options",
+					"options": [
+						{ "value": "left", "title": "Left", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M4 10h10M4 14h16M4 18h10'/></svg>" },
+						{ "value": "center", "title": "Center", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M7 10h10M4 14h16M7 18h10'/></svg>" },
+						{ "value": "right", "title": "Right", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M10 10h10M4 14h16M10 18h10'/></svg>" }
+					]
+				}
+			]
+		},
+		{
+			"type": "icon",
+			"title": "Icon",
+			"description": "An icon of the project, by itself.",
+			"class": "Icon",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M8.500 14.500a4.500 4.500 0 0 0 7 0M9 9.500h.010M15 9.500h.010'/></svg>",
+			"properties": [
+				{ "name": "icon", "title": "Icon", "type": "icon", "prop": "iconId" }
+			]
+		},
+		{
+			"type": "tag",
+			"title": "Tag",
+			"description": "A short text in a small rounded box, with an icon before it.",
+			"class": "Tag",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12V4h8l10 10-8 8z'/><path d='M7.500 8.500h.010'/></svg>",
+			"properties": [
+				{ "name": "label", "title": "Label", "type": "string", "initial": "Tag" },
+				{ "name": "icon", "title": "Icon", "type": "icon" }
+			]
+		},
+		{
+			"type": "link",
+			"title": "Link",
+			"description": "A text the user clicks to go to an address.",
+			"class": "Link",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M10 13a5 5 0 0 0 7.540.540l3-3a5 5 0 0 0-7.070-7.070l-1.720 1.710'/><path d='M14 11a5 5 0 0 0-7.540-.540l-3 3a5 5 0 0 0 7.070 7.070l1.710-1.710'/></svg>",
+			"properties": [
+				{ "name": "text", "title": "Text", "type": "string", "initial": "Link" },
+				{ "name": "href", "title": "Address", "type": "string", "initial": "#" },
+				{ "name": "icon", "title": "Icon", "type": "icon" },
+				{
+					"name": "align", "title": "Align", "type": "options",
+					"options": [
+						{ "value": "left", "title": "Left", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M4 10h10M4 14h16M4 18h10'/></svg>" },
+						{ "value": "center", "title": "Center", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M7 10h10M4 14h16M7 18h10'/></svg>" },
+						{ "value": "right", "title": "Right", "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h16M10 10h10M4 14h16M10 18h10'/></svg>" }
+					]
+				}
+			]
+		},
+		{
+			"type": "image",
+			"title": "Image",
+			"description": "A picture, from its address, in the room the component has.",
+			"class": "Image",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='1'/><circle cx='8.500' cy='9.500' r='1.500'/><path d='M21 16l-5-5-9 9'/></svg>",
+			"fixed": { "src": "" },
+			"initial": { "width": 120, "height": 80 },
+			"properties": [
+				{ "name": "src", "title": "Address", "type": "string", "default": "" },
+				{
+					"name": "fit", "title": "Fit", "type": "options",
+					"options": [
+						{ "value": "contain", "title": "Contain" },
+						{ "value": "cover", "title": "Cover" },
+						{ "value": "fill", "title": "Fill" },
+						{ "value": "scale-down", "title": "Down" }
+					]
+				},
+				{ "name": "position", "title": "Position", "type": "string", "default": "" },
+				{ "name": "alt", "title": "Alt text", "type": "string", "default": "" }
+			]
+		},
+		{
+			"type": "progress",
+			"title": "Progress",
+			"description": "A bar that fills as a value goes from its minimum to its maximum.",
+			"class": "Progress",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='9' width='18' height='6' rx='3'/><path d='M6 12h6'/></svg>",
+			"fixed": { "value": 0, "min": 0, "max": 100 },
+			"properties": [
+				{ "name": "value", "title": "Value", "type": "number", "default": 0, "initial": 50 },
+				{ "name": "min", "title": "Min", "type": "number", "default": 0 },
+				{ "name": "max", "title": "Max", "type": "number", "default": 100 }
+			]
+		},
+		{
+			"type": "gauge",
+			"title": "Gauge",
+			"description": "A dial with a needle: the code sets where the needle is, between a minimum and a maximum.",
+			"class": "Gauge",
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 17a8 8 0 0 1 16 0M12 17l4-5'/></svg>",
+			"fixed": { "min": 0, "max": 100 },
+			"initial": { "width": 200, "height": 120 },
+			"properties": [
+				{ "name": "min", "title": "Min", "type": "number", "default": 0 },
+				{ "name": "max", "title": "Max", "type": "number", "default": 100 }
+			]
+		},
+		{
+			"type": "calendar",
+			"title": "Calendar",
+			"description": "A month, in which the user picks a day. The code gives its dates. Its weeks share its height: it needs one.",
+			"class": "Calendar",
+			"initial": { "height": 240 },
+			"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='18' height='16' rx='1'/><path d='M3 10h18M8 3v4M16 3v4'/></svg>"
+		}
+	]
+}

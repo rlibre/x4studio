@@ -1,0 +1,131 @@
+
+.boxsurface {
+	--studio-accent: var( --color-primary-a50, #1597cf );
+	--studio-back: #d9dde0;							// around the page
+	--studio-box: rgba( 128, 128, 128, 0.5 );			// around a box, which draws nothing by itself
+
+	position: relative;
+	overflow: auto;
+	outline: none;
+	scrollbar-width: thin;
+	background: var( --studio-back );
+
+	// The surface takes the room its container gives it, and scrolls what
+	// does not fit; without this, it is as high as its page in an HBox,
+	// which centers its children.
+	min-width: 0;
+	min-height: 0;
+	align-self: stretch;
+
+	// what scrolls: the page, some room around it, and the layer above both
+	> .canvas {
+		position: relative;
+		display: flex;
+		box-sizing: border-box;
+		width: fit-content;
+		min-width: 100%;
+		min-height: 100%;
+		padding: 40px;
+
+		// what holds the page: all the room the surface has, less what is around
+		> .host {
+			display: flex;
+			flex: 1 1 auto;
+			min-width: 0;
+		}
+
+		// The page: real components. It has its own size, in the corner; a
+		// page that takes the room it is given (the class x4fit) takes all
+		// the room there is.
+		> .host > .page {
+			flex: none;
+			align-self: flex-start;
+			box-sizing: border-box;
+
+			// the background of its own theme, not the one of the studio:
+			// the variable is read here, where the page has its theme
+			background: var( --background-primary, white );
+			box-shadow: 0 1px 6px rgba( 0, 0, 0, 0.3 );
+
+			&.x4fit {
+				flex: 1 1 auto;
+				align-self: stretch;
+				width: auto;
+				height: auto;
+			}
+		}
+
+		// A box: a thin line shows where it is, inside it, and it keeps
+		// some room while it holds nothing. Neither is part of the page.
+		> .host .sbox {
+			outline: 1px dashed var( --studio-box );
+			outline-offset: -1px;
+
+			&.empty {
+				min-width: 32px;
+				min-height: 32px;
+			}
+		}
+
+		> .host .unknown {
+			padding: 4px 8px;
+			opacity: 0.6;
+		}
+	}
+
+	// The page is tried: it is alive, as in the application. The pointer
+	// goes through the layer to it, and nothing the studio draws is shown:
+	// neither what is selected, nor where the boxes are. A line around the
+	// surface says it is not edited.
+	&.trying {
+		box-shadow: inset 0 0 0 2px var( --studio-accent );
+
+		> .canvas > .layer {
+			display: none;
+		}
+
+		> .canvas > .host .sbox {
+			outline: none;
+
+			&.empty {
+				min-width: 0;
+				min-height: 0;
+			}
+		}
+	}
+
+	> .canvas {
+
+		// above the page and the room around it: receives the pointer
+		> .layer {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			touch-action: none;
+
+			// around each node that is selected
+			> .frames > .frame {
+				position: absolute;
+				box-sizing: border-box;
+				pointer-events: none;
+				outline: 2px solid var( --studio-accent );
+
+				// locked: not caught on the surface
+				&.locked {
+					outline-style: dashed;
+				}
+			}
+
+			// around the node the user points at in the tree of the objects
+			> .hover {
+				position: absolute;
+				box-sizing: border-box;
+				pointer-events: none;
+				outline: 2px solid var( --studio-accent );
+				opacity: 0.6;
+			}
+		}
+	}
+}

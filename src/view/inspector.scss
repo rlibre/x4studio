@@ -1,0 +1,406 @@
+
+.inspector {
+	--inspector-line: var( --border, #174b64 );
+	--inspector-dim: var( --text-ternary, #9ec3d4 );
+	--inspector-field: color-mix( in srgb, var( --text-primary, white ) 7%, transparent );
+	--inspector-field-hover: color-mix( in srgb, var( --text-primary, white ) 13%, transparent );
+	--inspector-accent: var( --accent-background, #126e9e );
+	--inspector-head: color-mix( in srgb, var( --text-primary, white ) 6%, transparent );
+
+	box-sizing: border-box;
+	align-self: stretch;
+	flex: 1 1 0;
+	min-height: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	user-select: none;
+
+	// What is shown: the kind of component that is selected, with its icon,
+	// then the name the user gave it; or the class whose style is edited.
+	> .what {
+		gap: 6px;
+		padding: 8px 10px;
+		font-weight: 600;
+
+		> .kind {
+			flex: none;
+			width: 16px;
+			height: 16px;
+		}
+
+		> .type {
+			flex: none;
+		}
+
+		> .name {
+			min-width: 0;
+			color: var( --inspector-dim );
+			font-weight: 400;
+
+			> #text {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+		}
+
+		&.class {
+			gap: 6px;
+			flex-wrap: wrap;
+
+			> .name {
+				min-width: 0;
+				color: var( --inspector-dim );
+			}
+
+			> .x4button {
+				flex: none;
+				margin: 0;
+				padding: 2px 8px;
+				font-weight: 400;
+			}
+		}
+	}
+
+	// a section: a title that folds it, and its fields
+	> .section {
+		border-top: 1px solid var( --inspector-line );
+
+		// a little lighter than the panel: the titles of the sections stand out
+		> .head {
+			padding: 0 6px 0 10px;
+			min-height: 30px;
+			background: var( --inspector-head );
+
+			> .title {
+				padding: 6px 0;
+				font-weight: 600;
+				cursor: pointer;
+			}
+
+			> .gadget {
+				flex: none;
+				margin: 0;
+				padding: 0 8px;
+			}
+
+			// the arrow: downwards when the section is open, to the right when it is folded
+			> .fold {
+				flex: none;
+				width: 14px;
+				height: 14px;
+				margin: 0 4px;
+				cursor: pointer;
+				opacity: 0.7;
+				transform: rotate( 90deg );
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		&.folded > .head > .fold {
+			transform: none;
+		}
+
+		// Four columns: a title, a value, a title, a value. A field takes
+		// the row whole, its value across the last three; two halves share
+		// it. Every first title is in the same column, whatever the field.
+		> .body {
+			display: grid;
+			grid-template-columns: 104px minmax( 0, 1fr ) max-content minmax( 0, 1fr );
+			align-items: center;
+			column-gap: 6px;
+			row-gap: 3px;
+			padding: 0 10px 8px 10px;
+		}
+
+		&.folded > .body {
+			display: none;
+		}
+
+		&.folded > .head > .title {
+			color: var( --inspector-dim );
+		}
+	}
+
+	// A field: its title, then what edits it. It has no box of its own:
+	// both are cells of the grid of its section.
+	.field {
+		display: contents;
+
+		> .title {
+			grid-column: 1;
+			overflow: hidden;
+			color: var( --inspector-dim );
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		> .editor {
+			grid-column: 2 / -1;
+			min-width: 0;
+			min-height: 24px;
+			margin: 0;
+		}
+
+		// a half: where the grid puts it, after the one before
+		&.half > .title,
+		&.half > .editor {
+			grid-column: auto;
+		}
+
+		// a text, a number, a list: no frame, a tint under the pointer and with the focus
+		> input.editor:not( [type="checkbox"] ),
+		> select.editor {
+			box-sizing: border-box;
+			width: 100%;
+			height: 24px;
+			padding: 0 6px;
+			border: 1px solid transparent;
+			border-radius: 3px;
+			background: var( --inspector-field );
+			color: inherit;
+			font: inherit;
+			user-select: text;
+
+			&:hover {
+				background: var( --inspector-field-hover );
+			}
+
+			&:focus {
+				border-color: var( --inspector-accent );
+				outline: none;
+			}
+
+			// what applies when the field holds nothing
+			&::placeholder {
+				color: var( --inspector-dim );
+				font-style: italic;
+				opacity: 0.8;
+			}
+		}
+
+		> select.editor > option {
+			background: var( --background-primary, #032f46 );
+			color: var( --text-primary, white );
+		}
+
+		> input.editor[type="checkbox"] {
+			justify-self: start;
+		}
+
+		// a few choices: small buttons side by side, the one that is the value is down
+		> .choices {
+			gap: 2px;
+
+			> .x4button {
+				flex: 1 1 0;
+				min-width: 0;
+				height: 24px;
+				margin: 0;
+				padding: 0 4px;
+				justify-content: center;
+				white-space: nowrap;
+
+				// a choice that is an icon: as wide as it is high, they stay together on the left
+				&.icon {
+					flex: none;
+					width: 28px;
+
+					> #icon {
+						width: 16px;
+						height: 16px;
+					}
+				}
+
+				&.down {
+					background-color: var( --inspector-accent );
+					color: var( --accent-color, white );
+
+					> #icon {
+						color: var( --accent-color, white );
+						fill: var( --accent-color, white );
+					}
+				}
+			}
+		}
+
+		// A color: its swatch, its code and the eye dropper, in the width of
+		// the field. The code is a field as the others are, not the pale one
+		// of x4, and gives its room when there is little.
+		> .x4colorinput {
+			min-width: 0;
+			height: 24px;
+			border-bottom: none;
+
+			> .swatch {
+				margin: 0 4px 0 0;
+				height: 20px;
+			}
+
+			> input {
+				box-sizing: border-box;
+				flex: 1 1 0;
+				width: 0;
+				min-width: 0;
+				height: 24px;
+				padding: 0 6px;
+				border: 1px solid transparent;
+				border-radius: 3px;
+				background: var( --inspector-field );
+				color: inherit;
+				font: inherit;
+				user-select: text;
+
+				&:hover {
+					background: var( --inspector-field-hover );
+				}
+
+				&:focus {
+					border-color: var( --inspector-accent );
+				}
+			}
+
+			> .x4button {
+				background: transparent;
+			}
+		}
+
+		// The four sides of a box: a lock, then a number for the left, the
+		// top, the right and the bottom. Locked, they are one value.
+		> .sides {
+			gap: 2px;
+
+			> .lock {
+				flex: none;
+				width: 24px;
+				height: 24px;
+				margin: 0;
+				padding: 0;
+				justify-content: center;
+
+				> #icon {
+					width: 13px;
+					height: 13px;
+				}
+
+				&.down {
+					background-color: var( --inspector-accent );
+
+					> #icon {
+						color: var( --accent-color, white );
+						fill: var( --accent-color, white );
+					}
+				}
+			}
+
+			> .side {
+				flex: 1 1 0;
+				box-sizing: border-box;
+				min-width: 0;
+				width: 0;
+				height: 24px;
+				margin: 0;
+				padding: 0 2px 0 5px;
+				border: 1px solid transparent;
+				border-radius: 3px;
+				background: var( --inspector-field );
+				color: inherit;
+				font: inherit;
+				user-select: text;
+
+				&:hover {
+					background: var( --inspector-field-hover );
+				}
+
+				&:focus {
+					border-color: var( --inspector-accent );
+					outline: none;
+				}
+
+				&::placeholder {
+					color: var( --inspector-dim );
+					font-style: italic;
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+
+	// the classes of what is selected: tags, then the field that adds one
+	.tags {
+		grid-column: 1 / -1;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 4px;
+		box-sizing: border-box;
+		min-width: 0;
+
+		> .x4tag {
+			flex: none;
+			cursor: pointer;
+		}
+
+		> .completer {
+			flex: 1 1 90px;
+			min-width: 90px;
+			margin: 0;
+
+			// it has no title here
+			> .x4label:empty,
+			> label:empty {
+				display: none;
+			}
+
+			input {
+				user-select: text;
+			}
+		}
+	}
+
+	// a name and its value, for what has no field
+	.pair {
+		grid-column: 1 / -1;
+		gap: 4px;
+		box-sizing: border-box;
+		min-width: 0;
+
+		> input {
+			box-sizing: border-box;
+			min-width: 0;
+			height: 24px;
+			margin: 0;
+			padding: 0 6px;
+			border: 1px solid transparent;
+			border-radius: 3px;
+			background: var( --inspector-field );
+			color: inherit;
+			font-family: Consolas, "Cascadia Mono", Menlo, monospace;
+			font-size: 12px;
+			user-select: text;
+
+			&:focus {
+				border-color: var( --inspector-accent );
+				outline: none;
+			}
+
+			&::placeholder {
+				color: var( --inspector-dim );
+				font-style: italic;
+				opacity: 0.8;
+			}
+		}
+
+		> .name {
+			flex: 1 1 0;
+		}
+
+		> .value {
+			flex: 1 1 0;
+		}
+	}
+}

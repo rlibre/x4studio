@@ -1,0 +1,17 @@
+{
+	"name": "x4studio",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "x4js dev",
+		"build": "x4js build",
+		"test": "node --test \"test/**/*.test.ts\""
+	},
+	"dependencies": {
+		"@fontsource/montserrat": "^5.3.0"
+	},
+	"devDependencies": {
+		"playwright": "^1.64.0"
+	}
+}

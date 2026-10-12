@@ -1,0 +1,104 @@
+
+// The picker of an icon: a popup under the field that asks, with a filter
+// and the icons of the project in a grid.
+.iconpicker {
+	--iconpicker-dim: var( --text-ternary, #9ec3d4 );
+	--iconpicker-accent: var( --accent-background, #126e9e );
+
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	box-sizing: border-box;
+	width: 312px;
+	margin: 0;
+	padding: 8px;
+	border: 1px solid var( --border, #174b64 );
+	border-radius: 4px;
+	background: var( --background-primary, #032f46 );
+	box-shadow: 0 6px 18px rgba( 0, 0, 0, 0.4 );
+	color: var( --text-primary, white );
+
+	> input {
+		box-sizing: border-box;
+		width: 100%;
+		height: 26px;
+		margin: 0;
+		padding: 0 8px;
+		border: 1px solid transparent;
+		border-radius: 3px;
+		background: color-mix( in srgb, var( --text-primary, white ) 7%, transparent );
+		color: inherit;
+		font: inherit;
+
+		&:focus {
+			border-color: var( --iconpicker-accent );
+			outline: none;
+		}
+
+		&::placeholder {
+			color: var( --iconpicker-dim );
+			font-style: italic;
+			opacity: 0.8;
+		}
+	}
+
+	// Four in a row; with many icons, the grid scrolls and the filter stays.
+	> .tiles {
+		display: grid;
+		grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
+		gap: 4px;
+		max-height: 300px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		scrollbar-width: thin;
+
+		// the icon as it is drawn, and its name under it
+		> .tile {
+			flex-direction: column;
+			gap: 4px;
+			box-sizing: border-box;
+			min-width: 0;
+			height: 60px;
+			margin: 0;
+			padding: 8px 2px 4px;
+			justify-content: center;
+			align-items: center;
+
+			> #icon {
+				flex: none;
+				width: 24px;
+				height: 24px;
+			}
+
+			> #label {
+				max-width: 100%;
+				overflow: hidden;
+				color: var( --iconpicker-dim );
+				font-size: 11px;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			&.none > #icon {
+				display: none;
+			}
+
+			&.down {
+				background-color: var( --iconpicker-accent );
+
+				> #icon,
+				> #label {
+					color: var( --accent-color, white );
+					fill: var( --accent-color, white );
+				}
+			}
+		}
+
+		> .nothing {
+			grid-column: 1 / -1;
+			padding: 16px 4px;
+			color: var( --iconpicker-dim );
+			text-align: center;
+		}
+	}
+}

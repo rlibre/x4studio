@@ -1,0 +1,479 @@
+{
+	"name": "Demo",
+	"icons": [
+		{ "name": "user", "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='8' r='4'/><path d='M4 21a8 8 0 0 1 16 0'/></svg>" },
+		{ "name": "help", "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M9.500 9.500a2.500 2.500 0 1 1 3.500 2.300c-.600.300-1 .800-1 1.500M12 17h.010'/></svg>" },
+		{ "name": "trash-bin", "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 7h16M10 7V4h4v3M6 7l1 13h10l1-13M10 11v6M14 11v6'/></svg>" }
+	],
+	"styles": {
+		"format": "x4studio/styles",
+		"version": 1,
+		"styles": [
+			{
+				"id": 1,
+				"name": "card",
+				"values": { "padding": { "left": 20, "top": 14, "right": 20, "bottom": 16 }, "gap": 10, "background": "#06354e", "borderWidth": 1, "borderStyle": "solid", "borderColor": "#174b64", "radius": 8 }
+			},
+			{
+				"id": 2,
+				"name": "title",
+				"values": { "fontSize": 20, "fontWeight": "600" }
+			},
+			{
+				"id": 3,
+				"name": "muted",
+				"values": { "color": "#9ec3d4", "fontSize": 12 }
+			},
+			{
+				"id": 4,
+				"name": "danger",
+				"values": { "radius": 16 },
+				"css": "--button-background: #c8553d;\n--button-background-hover: #d9664e;"
+			}
+		]
+	},
+	"pages": [
+		{
+			"name": "Demo",
+			"root": {
+				"id": 0,
+				"type": "root",
+				"box": { "x": 0, "y": 0, "w": 560, "h": 520 },
+				"props": { "fit": false, "css": { "padding": 16, "gap": 12 } },
+				"children": [
+					{
+						"id": 1,
+						"type": "vbox",
+						"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+						"name": "form",
+						"props": { "styles": [1] },
+						"children": [
+							{
+								"id": 2,
+								"type": "label",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"props": { "text": "Sign in", "styles": [2] }
+							},
+							{
+								"id": 3,
+								"type": "label",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"props": { "text": "User name", "icon": "user" }
+							},
+							{
+								"id": 4,
+								"type": "input",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"name": "user",
+								"props": { "placeholder": "name" }
+							},
+							{
+								"id": 5,
+								"type": "label",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"props": { "text": "A class, and a size of its own over it", "styles": [3], "css": { "fontSize": 14 } }
+							},
+							{
+								"id": 6,
+								"type": "btngroup",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"name": "buttons",
+								"props": { "align": "right" },
+								"children": [
+									{
+										"id": 7,
+										"type": "button",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"name": "help",
+										"props": { "label": "Help", "icon": "help" }
+									},
+									{
+										"id": 8,
+										"type": "btnitem",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "name": "-" }
+									},
+									{
+										"id": 9,
+										"type": "btnitem",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "name": "ok", "default": true }
+									},
+									{
+										"id": 10,
+										"type": "btnitem",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "name": "cancel", "outline": true }
+									}
+								]
+							}
+						]
+					},
+					{
+						"id": 11,
+						"type": "hbox",
+						"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+						"props": { "css": { "gap": 12, "alignItems": "start" } },
+						"children": [
+							{
+								"id": 12,
+								"type": "listbox",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"name": "fruits",
+								"props": { "title": "Fruits", "width": 200, "height": 150 },
+								"children": [
+									{
+										"id": 13,
+										"type": "listitem",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "id": "apple", "text": "Apple" }
+									},
+									{
+										"id": 14,
+										"type": "listitem",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "id": "pear", "text": "Pear" }
+									},
+									{
+										"id": 15,
+										"type": "listitem",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "id": "plum", "text": "Plum" }
+									}
+								]
+							},
+							{
+								"id": 16,
+								"type": "vbox",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"props": { "flex": 1, "css": { "gap": 8 } },
+								"children": [
+									{
+										"id": 17,
+										"type": "button",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"name": "remove",
+										"props": { "label": "A class that sets variables", "icon": "trash-bin", "styles": [4] }
+									},
+									{
+										"id": 18,
+										"type": "button",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "label": "A variable of its own", "vars": { "--button-background": "#4f9d69" } }
+									},
+									{
+										"id": 19,
+										"type": "vbox",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"children": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "DemoFit",
+			"root": {
+				"id": 0,
+				"type": "root",
+				"box": { "x": 0, "y": 0, "w": 800, "h": 600 },
+				"props": { "fit": true },
+				"children": [
+					{
+						"id": 1,
+						"type": "hbox",
+						"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+						"props": { "flex": 1, "css": { "alignItems": "stretch" } },
+						"children": [
+							{
+								"id": 2,
+								"type": "vbox",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"name": "side",
+								"props": { "width": 180, "styles": [1] },
+								"children": [
+									{
+										"id": 3,
+										"type": "label",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "text": "Side", "styles": [2] }
+									},
+									{
+										"id": 4,
+										"type": "button",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "label": "One" }
+									},
+									{
+										"id": 5,
+										"type": "button",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "label": "Two" }
+									}
+								]
+							},
+							{
+								"id": 6,
+								"type": "vbox",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"name": "body",
+								"props": { "flex": 1, "css": { "padding": 16, "gap": 8 } },
+								"children": [
+									{
+										"id": 7,
+										"type": "label",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "text": "A page that fits: it takes the room of the surface", "styles": [2] }
+									},
+									{
+										"id": 8,
+										"type": "label",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "text": "The side has a width of its own, this part takes what is left.", "styles": [3] }
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Components",
+			"root": {
+				"id": 0,
+				"type": "root",
+				"box": { "x": 0, "y": 0, "w": 900, "h": 960 },
+				"props": { "fit": false, "css": { "padding": 16, "gap": 12 } },
+				"children": [
+					{
+						"id": 1,
+						"type": "hbox",
+						"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+						"props": { "css": { "gap": 16, "alignItems": "start" } },
+						"children": [
+							{
+								"id": 2,
+								"type": "panel",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"props": { "title": "Fields", "icon": "user", "flex": 1, "height": 600 },
+								"children": [
+									{
+										"id": 3,
+										"type": "form",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"name": "form",
+										"props": { "css": { "gap": 8 } },
+										"children": [
+											{
+												"id": 4,
+												"type": "textedit",
+												"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+												"props": { "label": "Name", "labelWidth": 80, "placeholder": "your name", "required": true, "name": "name" }
+											},
+											{
+												"id": 5,
+												"type": "textedit",
+												"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+												"props": { "label": "Age", "labelWidth": 80, "inputWidth": 80, "type": "number", "value": "30", "name": "age" }
+											},
+											{
+												"id": 6,
+												"type": "combobox",
+												"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+												"props": { "label": "Country", "labelWidth": 80, "value": "fr", "name": "country" },
+												"children": [
+													{ "id": 7, "type": "comboitem", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "id": "fr", "text": "France" } },
+													{ "id": 8, "type": "comboitem", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "id": "de", "text": "Germany" } },
+													{ "id": 9, "type": "comboitem", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "id": "it", "text": "Italy" } }
+												]
+											},
+											{
+												"id": 10,
+												"type": "select",
+												"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+												"props": { "value": "m", "name": "size" },
+												"children": [
+													{ "id": 11, "type": "selectitem", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "id": "s", "text": "Small" } },
+													{ "id": 12, "type": "selectitem", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "id": "m", "text": "Medium" } },
+													{ "id": 13, "type": "selectitem", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "id": "l", "text": "Large" } }
+												]
+											},
+											{
+												"id": 14,
+												"type": "checkbox",
+												"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+												"props": { "label": "Remember me", "checked": true, "name": "remember" }
+											},
+											{
+												"id": 15,
+												"type": "switch",
+												"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+												"props": { "label": "Notifications", "checked": true }
+											},
+											{
+												"id": 16,
+												"type": "hbox",
+												"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+												"props": { "css": { "gap": 12 } },
+												"children": [
+													{ "id": 17, "type": "radio", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "label": "Monthly", "name": "plan", "value": "month", "checked": true } },
+													{ "id": 18, "type": "radio", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "label": "Yearly", "name": "plan", "value": "year" } }
+												]
+											},
+											{
+												"id": 19,
+												"type": "slider",
+												"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+												"name": "volume",
+												"props": { "value": 30 }
+											},
+											{
+												"id": 20,
+												"type": "colorinput",
+												"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+												"props": { "color": "#126e9e", "format": "hex", "picker": true, "name": "color" }
+											},
+											{
+												"id": 21,
+												"type": "rating",
+												"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+												"props": { "value": 3, "name": "mark" }
+											},
+											{
+												"id": 22,
+												"type": "textarea",
+												"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+												"props": { "label": "Comment", "height": 100, "resize": "none", "name": "comment" }
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": 23,
+								"type": "panel",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"props": { "title": "Display", "flex": 1, "height": 600, "css": { "gap": 10 } },
+								"children": [
+									{
+										"id": 24,
+										"type": "simpletext",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "text": "A simple text: no icon, and it takes the lines it needs when the room is short." }
+									},
+									{
+										"id": 25,
+										"type": "hbox",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "css": { "gap": 12 } },
+										"children": [
+											{ "id": 26, "type": "tag", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "label": "Tag", "icon": "user" } },
+											{ "id": 27, "type": "icon", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "icon": "help" } },
+											{ "id": 28, "type": "link", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "text": "x4js.org", "href": "https://x4js.org" } }
+										]
+									},
+									{
+										"id": 29,
+										"type": "progress",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"name": "progress",
+										"props": { "value": 60 }
+									},
+									{
+										"id": 30,
+										"type": "hbox",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "css": { "gap": 12, "alignItems": "start" } },
+										"children": [
+											{ "id": 31, "type": "gauge", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "name": "gauge", "props": { "width": 200, "height": 120 } },
+											{ "id": 32, "type": "image", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "width": 120, "height": 80, "fit": "contain", "css": { "borderWidth": 1, "borderStyle": "dashed", "borderColor": "#9ec3d4" } } }
+										]
+									},
+									{
+										"id": 33,
+										"type": "calendar",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "height": 240 }
+									}
+								]
+							}
+						]
+					},
+					{
+						"id": 34,
+						"type": "hsplitbox",
+						"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+						"props": { "height": 90 },
+						"children": [
+							{
+								"id": 35,
+								"type": "vbox",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"props": { "width": 200, "styles": [1] },
+								"children": [
+									{ "id": 36, "type": "label", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "text": "A width of its own" } }
+								]
+							},
+							{
+								"id": 37,
+								"type": "vbox",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"props": { "flex": 1, "styles": [1] },
+								"children": [
+									{ "id": 38, "type": "label", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "text": "What is left: a sizer is between the two" } }
+								]
+							}
+						]
+					},
+					{
+						"id": 39,
+						"type": "tabs",
+						"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+						"name": "tabs",
+						"props": { "default": "general", "height": 160 },
+						"children": [
+							{
+								"id": 40,
+								"type": "tabitem",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"props": { "name": "general", "title": "General", "icon": "user" },
+								"children": [
+									{
+										"id": 41,
+										"type": "vbox",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"props": { "css": { "gap": 8 } },
+										"children": [
+											{ "id": 42, "type": "label", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "text": "The page of a tab holds one component: a box, here." } },
+											{ "id": 43, "type": "checkbox", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "label": "An option of the first page" } }
+										]
+									}
+								]
+							},
+							{
+								"id": 44,
+								"type": "tabitem",
+								"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+								"props": { "name": "advanced", "title": "Advanced" },
+								"children": [
+									{
+										"id": 45,
+										"type": "vbox",
+										"box": { "x": 0, "y": 0, "w": 0, "h": 0 },
+										"children": [
+											{ "id": 46, "type": "label", "box": { "x": 0, "y": 0, "w": 0, "h": 0 }, "props": { "text": "Selected in the tree, a page is shown on the surface." } }
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		}
+	]
+}
